@@ -5,7 +5,11 @@
 #ifndef LAB3_STACK_HPP
 #define LAB3_STACK_HPP
 
+#include <string>
+
 constexpr int stackSize = 10;
+
+using namespace std;
 
 //The class of stack which puts numbers and takes numbers off from the top
 class stack {
@@ -45,28 +49,33 @@ class stack {
         }
 
         //returns the current int of the top of the intStack without decreasing the stackTop
-        const int top()
+        int top() const
         {
             return intStack[stackTop];
         }
 
-        const bool empty()
+        bool empty() const
         {
             if(stackTop == -1)
                 return 1;
             return 0;
         }
 
-        const bool full()
+        bool full() const
         {
             if(stackTop == stackSize)
                 return 1;
             return 0;
         }
 
-        const string print()
-        {
-            return 0;
+        string print() const
+    {
+            string output = "";
+            for(int i = stackTop; i >= 0; i--)
+            {
+                output += i + " ";
+            }
+            return output;
         }
 
 
