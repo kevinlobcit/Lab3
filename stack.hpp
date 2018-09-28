@@ -9,8 +9,6 @@
 
 constexpr int stackSize = 10;
 
-using namespace std;
-
 //The class of stack which puts numbers and takes numbers off from the top
 class stack {
 
@@ -25,58 +23,27 @@ class stack {
     public:
 
         //stack's constructor which sets the top to -1 because there is nothing in the stack
-        stack()
-        {
-            stackTop = -1;
-        }
+        stack();
 
         //Puts an integer at the top of the array
         //returns true if successful, false if the stack is already full
-        bool push(int toPush)
-        {
-            if(stackTop < stackSize)
-            {
-                intStack[++stackTop] = toPush;
-                return 1;
-            }
-            return 0;
-        }
+        const bool push(int toPush);
 
         //Returns the current int of the top of the intStack and decreases the stackTop by 1 afterwards
-        int pop()
-        {
-            return intStack[stackTop--];
-        }
+        const int pop();
 
         //returns the current int of the top of the intStack without decreasing the stackTop
-        int top() const
-        {
-            return intStack[stackTop];
-        }
+        int top() const;
 
-        bool empty() const
-        {
-            if(stackTop == -1)
-                return 1;
-            return 0;
-        }
+        //returns true if empty else false
+        bool empty() const;
 
-        bool full() const
-        {
-            if(stackTop == stackSize)
-                return 1;
-            return 0;
-        }
+        //returns true if full else false
+        bool full() const;
 
-        string print() const
-        {
-            string output = "";
-            for(int i = stackTop; i >= 0; i--)
-            {
-                output += i + " ";
-            }
-            return output;
-        }
+        //Prints the stack
+        string print() const;
+
 
 
 };
