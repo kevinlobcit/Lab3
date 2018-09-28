@@ -69,7 +69,7 @@ class stack {
         }
 
         string print() const
-    {
+        {
             string output = "";
             for(int i = stackTop; i >= 0; i--)
             {
