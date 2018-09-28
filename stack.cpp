@@ -5,7 +5,7 @@
 #include "stack.hpp"
 
 //stack's constructor which sets the top to -1 because there is nothing in the stack
-stack()
+stack::stack()
 {
     stackTop = -1;
 }
