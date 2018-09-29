@@ -42,7 +42,7 @@ class stack {
         bool full() const;
 
         //Prints the stack
-        string print() const;
+        std::string print() const;
 
 
 

@@ -14,9 +14,10 @@ stack::stack()
 //returns true if successful, false if the stack is already full
 const bool stack::push(int toPush)
 {
-    if(stackTop < stackSize)
+
+    if(++stackTop < stackSize)
     {
-        intStack[++stackTop] = toPush;
+        intStack[stackTop] = toPush;
         return 1;
     }
     return 0;
