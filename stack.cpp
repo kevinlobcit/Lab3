@@ -38,15 +38,16 @@ int stack::top() const
 bool stack::empty() const
 {
     if(stackTop == -1)
-        return 1;
-    return 0;
+        return true;
+    return false;
 }
 
 bool stack::full() const
 {
-    if(stackTop == stackSize)
-        return 1;
-    return 0;
+
+    if(stackTop == stackSize-1)
+        return true;
+    return false;
 }
 
 std::string stack::print() const

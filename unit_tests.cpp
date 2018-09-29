@@ -40,13 +40,56 @@ TEST_CASE("A new stack with 4 ints pushed and one popped", "[stack")
     tester.push(2);
     tester.push(3);
 
-    REQUIRE(tester.pop() == 2);
+    REQUIRE(tester.pop() == 3);
 }
 
 TEST_CASE("A new stack with 4 ints and using top()", "[stack")
 {
-    
+    stack tester;
+
+    tester.push(0);
+    tester.push(1);
+    tester.push(2);
+    tester.push(3);
+
+    REQUIRE(tester.top() == 3);
+    REQUIRE(tester.top() == 3);
 }
 
+TEST_CASE("A new stack with nothing and testing if it is empty", "[stack")
+{
+    stack tester;
 
+    REQUIRE(tester.empty() == 1);
+}
 
+TEST_CASE("A stack with a full array and using full()", "[stack")
+{
+    stack tester;
+
+    tester.push(0);
+    tester.push(1);
+    tester.push(2);
+    tester.push(3);
+    tester.push(4);
+    tester.push(5);
+    tester.push(6);
+    tester.push(7);
+    tester.push(8);
+    tester.push(9);
+
+    REQUIRE(tester.full() == 1);
+}
+
+TEST_CASE("A stack with 5 ints and using print()", "[stack")
+{
+    stack tester;
+
+    tester.push(0);
+    tester.push(1);
+    tester.push(2);
+    tester.push(3);
+    tester.push(4);
+
+    REQUIRE(tester.print().compare("0 1 2 3 4 "));
+}
