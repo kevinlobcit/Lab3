@@ -35,6 +35,7 @@ int stack::top() const
     return intStack[stackTop];
 }
 
+//returns true if empty else false
 bool stack::empty() const
 {
     if(stackTop == -1)
@@ -42,6 +43,7 @@ bool stack::empty() const
     return false;
 }
 
+//returns true if full else false
 bool stack::full() const
 {
 
@@ -50,6 +52,7 @@ bool stack::full() const
     return false;
 }
 
+//Prints the stack
 std::string stack::print() const
 {
     std::string output = "";
